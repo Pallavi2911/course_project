@@ -1,6 +1,7 @@
 # CourseProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Bootstrap version used is 3. To use same version use the command `npm i bootstrap@3` to reset the version to 3.
 
 ## Development server
 
