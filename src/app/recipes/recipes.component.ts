@@ -9,16 +9,7 @@ import { RecipeService } from './recipe.service';
   providers: [RecipeService],
 })
 export class RecipesComponent {
-  //to store the selected recipe
-  selectedRecipe: Recipe;
+  constructor() {}
 
-  constructor(private recipeService: RecipeService) {}
-
-  //listener on the recipe selected,subscribe to it to get informed about the changes
-  //in the ES6 arrow function is the argument list(recipe: Recipe) and function body {this.selectedRecipe = recipe;}
-  ngOnInit() {
-    this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
-      this.selectedRecipe = recipe;
-    });
-  }
+  ngOnInit() {}
 }
