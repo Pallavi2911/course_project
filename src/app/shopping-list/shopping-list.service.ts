@@ -23,7 +23,7 @@ export class ShoppingListService {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
-  updateIngredient(index: number,ingredient: Ingredient) {
+  updateIngredient(index: number, ingredient: Ingredient) {
     this.ingredients[index] = ingredient;
     this.ingredientsChanged.next(this.ingredients.slice());
   }
@@ -32,6 +32,13 @@ export class ShoppingListService {
     //... is a spread operator which simple spread our array into list of single ingredient
     //so they get pushed without issue
     this.ingredients.push(...ingredients);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(index: number) {
+    //Splice allows us to start at a specific point,for example, at the index here,
+    //and then splice one element, thus removing it.
+    this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
